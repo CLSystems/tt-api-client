@@ -365,15 +365,30 @@ class TradeTrackerClient
 
     /**
      * @param int $affiliateSiteId
-     * @param string $outputType Possible values: html, javascript, iframe, popup, popunder, rss
+     * @param string $materialOutputType Possible values: html, javascript, iframe, popup, popunder, rss
      * @param Filter\MaterialItemFilter|null $filter
      * @return array
      */
-    public function getMaterialHTMLItems(int $affiliateSiteId, $outputType, Filter\MaterialItemFilter $filter = null)
+    public function getMaterialBannerImageItems(int $affiliateSiteId, string $materialOutputType, Filter\MaterialItemFilter $filter = null)
     {
         return $this->execute(__FUNCTION__, new Mapper\MaterialItemMapper(), [
             $affiliateSiteId,
-            $outputType,
+            $materialOutputType,
+            $filter,
+        ]);
+    }
+
+    /**
+     * @param int $affiliateSiteId
+     * @param string $materialOutputType Possible values: html, javascript, iframe, popup, popunder, rss
+     * @param Filter\MaterialItemFilter|null $filter
+     * @return array
+     */
+    public function getMaterialHTMLItems(int $affiliateSiteId, string $materialOutputType, Filter\MaterialItemFilter $filter = null)
+    {
+        return $this->execute(__FUNCTION__, new Mapper\MaterialItemMapper(), [
+            $affiliateSiteId,
+            $materialOutputType,
             $filter,
         ]);
     }

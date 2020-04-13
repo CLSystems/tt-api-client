@@ -2,7 +2,7 @@
 
 namespace CLSystems\TradeTracker\Model;
 
-class MaterialItem
+class MaterialHTMLItem
 {
     /**
      * @var integer
@@ -88,7 +88,7 @@ class MaterialItem
     }
 
     /**
-     * @param int $id
+     * @param integer $id
      */
     public function setId($id)
     {
@@ -96,9 +96,9 @@ class MaterialItem
     }
 
     /**
-     * @return Campaign
+     * @return string
      */
-    public function getCampaign(): Campaign
+    public function getCampaign()
     {
         return $this->campaign;
     }
@@ -152,9 +152,9 @@ class MaterialItem
     }
 
     /**
-     * @param string|null $modificationDate
+     * @param string $modificationDate
      */
-    public function setModificationDate(?string $modificationDate) : void
+    public function setModificationDate(string $modificationDate) : void
     {
         $this->modificationDate = $modificationDate;
     }
@@ -168,9 +168,9 @@ class MaterialItem
     }
 
     /**
-     * @param MaterialBannerDimension|null $materialBannerDimension
+     * @param MaterialBannerDimension $materialBannerDimension
      */
-    public function setMaterialBannerDimension(?MaterialBannerDimension $materialBannerDimension) : void
+    public function setMaterialBannerDimension(MaterialBannerDimension $materialBannerDimension) : void
     {
         $this->materialBannerDimension = $materialBannerDimension;
     }
