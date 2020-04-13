@@ -3,9 +3,8 @@
 namespace CLSystems\TradeTracker\Mapper;
 
 use CLSystems\TradeTracker\Model\MaterialBannerDimension;
-use CLSystems\TradeTracker\Model\MaterialItem;
 
-class MaterialItemMapper implements MapperInterface
+class MaterialBannerDimensionMapper implements MapperInterface
 {
     /**
      * {@inheritdoc}
@@ -14,7 +13,7 @@ class MaterialItemMapper implements MapperInterface
      */
     public function hydrate($value)
     {
-        $item = new MaterialItem();
+        $item = new MaterialBannerDimension();
         $item->setId($value->ID);
         $item->setCampaign((new CampaignMapper())->hydrate($value->campaign));
         $item->setName($value->name);
