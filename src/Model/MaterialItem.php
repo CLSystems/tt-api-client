@@ -30,7 +30,7 @@ class MaterialItem
     private $modificationDate;
 
     /**
-     * @var \CLSystems\TradeTracker\Model\MaterialBannerDimension
+     * @var MaterialBannerDimension
      */
     private $materialBannerDimension;
 
@@ -40,22 +40,22 @@ class MaterialItem
     private $referenceSupported;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $description;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $conditions;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $validFromDate;
 
     /**
-     * var string
+     * @var string|null
      */
     private $validToDate;
 
@@ -70,12 +70,12 @@ class MaterialItem
     private $discountVariable;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $voucherCode;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $code;
 
@@ -114,7 +114,7 @@ class MaterialItem
     /**
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -122,7 +122,7 @@ class MaterialItem
     /**
      * @param string $name
      */
-    public function setName(string $name) : void
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -130,7 +130,7 @@ class MaterialItem
     /**
      * @return string
      */
-    public function getCreationDate() : string
+    public function getCreationDate(): string
     {
         return $this->creationDate;
     }
@@ -138,7 +138,7 @@ class MaterialItem
     /**
      * @param string $creationDate
      */
-    public function setCreationDate(string $creationDate) : void
+    public function setCreationDate(string $creationDate): void
     {
         $this->creationDate = $creationDate;
     }
@@ -146,7 +146,7 @@ class MaterialItem
     /**
      * @return string
      */
-    public function getModificationDate() : string
+    public function getModificationDate(): string
     {
         return $this->modificationDate;
     }
@@ -154,7 +154,7 @@ class MaterialItem
     /**
      * @param string|null $modificationDate
      */
-    public function setModificationDate(?string $modificationDate) : void
+    public function setModificationDate(?string $modificationDate): void
     {
         $this->modificationDate = $modificationDate;
     }
@@ -162,7 +162,7 @@ class MaterialItem
     /**
      * @return MaterialBannerDimension
      */
-    public function getMaterialBannerDimension() : MaterialBannerDimension
+    public function getMaterialBannerDimension(): MaterialBannerDimension
     {
         return $this->materialBannerDimension;
     }
@@ -170,7 +170,7 @@ class MaterialItem
     /**
      * @param MaterialBannerDimension|null $materialBannerDimension
      */
-    public function setMaterialBannerDimension(?MaterialBannerDimension $materialBannerDimension) : void
+    public function setMaterialBannerDimension(?MaterialBannerDimension $materialBannerDimension): void
     {
         $this->materialBannerDimension = $materialBannerDimension;
     }
@@ -178,7 +178,7 @@ class MaterialItem
     /**
      * @return bool
      */
-    public function isReferenceSupported() : bool
+    public function isReferenceSupported(): bool
     {
         return $this->referenceSupported;
     }
@@ -186,23 +186,23 @@ class MaterialItem
     /**
      * @param bool $referenceSupported
      */
-    public function setReferenceSupported(bool $referenceSupported) : void
+    public function setReferenceSupported(bool $referenceSupported): void
     {
         $this->referenceSupported = $referenceSupported;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDescription() : string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
     /**
-     * @param string $description
+     * @param string|null $description
      */
-    public function setDescription(string $description) : void
+    public function setDescription(?string $description): void
     {
         $this->description = $description;
     }
@@ -210,15 +210,15 @@ class MaterialItem
     /**
      * @return string
      */
-    public function getConditions() : string
+    public function getConditions(): string
     {
         return $this->conditions;
     }
 
     /**
-     * @param string $conditions
+     * @param string|null $conditions
      */
-    public function setConditions(string $conditions) : void
+    public function setConditions(?string $conditions) : void
     {
         $this->conditions = $conditions;
     }
@@ -232,9 +232,9 @@ class MaterialItem
     }
 
     /**
-     * @param string $validFromDate
+     * @param string|null $validFromDate
      */
-    public function setValidFromDate(string $validFromDate) : void
+    public function setValidFromDate(?string $validFromDate) : void
     {
         $this->validFromDate = $validFromDate;
     }
@@ -248,73 +248,73 @@ class MaterialItem
     }
 
     /**
-     * @param mixed $validToDate
+     * @param string|null $validToDate
      */
-    public function setValidToDate($validToDate) : void
+    public function setValidToDate(?string $validToDate) : void
     {
         $this->validToDate = $validToDate;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getDiscountFixed() : float
+    public function getDiscountFixed() : ?float
     {
         return $this->discountFixed;
     }
 
     /**
-     * @param float $discountFixed
+     * @param float|null $discountFixed
      */
-    public function setDiscountFixed(float $discountFixed) : void
+    public function setDiscountFixed(?float $discountFixed) : void
     {
         $this->discountFixed = $discountFixed;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getDiscountVariable() : float
+    public function getDiscountVariable() : ?float
     {
         return $this->discountVariable;
     }
 
     /**
-     * @param float $discountVariable
+     * @param float|null $discountVariable
      */
-    public function setDiscountVariable(float $discountVariable) : void
+    public function setDiscountVariable(?float $discountVariable) : void
     {
         $this->discountVariable = $discountVariable;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVoucherCode() : string
+    public function getVoucherCode() : ?string
     {
         return $this->voucherCode;
     }
 
     /**
-     * @param string $voucherCode
+     * @param string|null $voucherCode
      */
-    public function setVoucherCode(string $voucherCode) : void
+    public function setVoucherCode(?string $voucherCode) : void
     {
         $this->voucherCode = $voucherCode;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCode() : string
+    public function getCode() : ?string
     {
         return $this->code;
     }
 
     /**
-     * @param string $code
+     * @param string|null $code
      */
-    public function setCode(string $code) : void
+    public function setCode(?string $code) : void
     {
         $this->code = $code;
     }
