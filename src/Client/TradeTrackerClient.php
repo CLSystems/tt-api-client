@@ -369,7 +369,7 @@ class TradeTrackerClient
      * @param Filter\MaterialItemFilter|null $filter
      * @return array
      */
-    public function getMaterialItems(int $affiliateSiteId, $outputType, Filter\MaterialItemFilter $filter = null)
+    public function getMaterialHTMLItems(int $affiliateSiteId, $outputType, Filter\MaterialItemFilter $filter = null)
     {
         return $this->execute(__FUNCTION__, new Mapper\MaterialItemMapper(), [
             $affiliateSiteId,

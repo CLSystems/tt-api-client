@@ -13,6 +13,8 @@ class MaterialItemMapper implements MapperInterface
      */
     public function hydrate($value)
     {
+        var_dump($value); die;
+
         $item = new MaterialItem();
         $item->setMaterialItemId($value->materialItemID);
         $item->setCampaign((new CampaignMapper())->$this->hydrate($value->campaign));
