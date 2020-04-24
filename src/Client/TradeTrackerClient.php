@@ -6,6 +6,7 @@ use CLSystems\TradeTracker\Exception\AuthenticationException;
 use CLSystems\TradeTracker\Filter;
 use CLSystems\TradeTracker\Mapper;
 use CLSystems\TradeTracker\Model;
+use Exception;
 use SoapClient;
 use SoapFault;
 
@@ -66,7 +67,7 @@ class TradeTrackerClient
                 $authenticate->getLocale(),
                 $authenticate->isDemo()
             );
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             throw new AuthenticationException(
                 sprintf('Failed to authenticate with message "%s".', $exception->getMessage())
             );
@@ -366,16 +367,31 @@ class TradeTrackerClient
     }
 
     /**
-     * @param int                            $affiliateSiteId The affiliate site.
-     * @param string                         $outputType      Possible values: html, javascript, iframe, popup, popunder, rss
-     * @param Filter\MaterialItemFilter|null $filter          To filter the results.
+     * @param int $affiliateSiteId
+     * @param string $materialOutputType Possible values: html, javascript, iframe, popup, popunder, rss
+     * @param Filter\MaterialItemFilter|null $filter
      * @return array
      */
-    public function getMaterialItems(int $affiliateSiteId, $outputType, Filter\MaterialItemFilter $filter = null)
+    public function getMaterialBannerImageItems(int $affiliateSiteId, string $materialOutputType, Filter\MaterialItemFilter $filter = null)
     {
         return $this->execute(__FUNCTION__, new Mapper\MaterialItemMapper(), [
             $affiliateSiteId,
-            $outputType,
+            $materialOutputType,
+            $filter,
+        ]);
+    }
+
+    /**
+     * @param int $affiliateSiteId
+     * @param string $materialOutputType Possible values: html, javascript, iframe, popup, popunder, rss
+     * @param Filter\MaterialItemFilter|null $filter
+     * @return array
+     */
+    public function getMaterialHTMLItems(int $affiliateSiteId, string $materialOutputType, Filter\MaterialItemFilter $filter = null)
+    {
+        return $this->execute(__FUNCTION__, new Mapper\MaterialItemMapper(), [
+            $affiliateSiteId,
+            $materialOutputType,
             $filter,
         ]);
     }

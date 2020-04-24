@@ -9,7 +9,7 @@ class MaterialBannerDimension
     /**
      * @var integer
      */
-    private $ID;
+    private $id;
 
     /**
      * @var integer
@@ -34,17 +34,17 @@ class MaterialBannerDimension
     /**
      * @return int
      */
-    public function getID() : int
+    public function getId() : int
     {
-        return $this->ID;
+        return $this->id;
     }
 
     /**
      * @param int $id
      */
-    public function setID(int $id) : void
+    public function setId(int $id) : void
     {
-        $this->ID = $id;
+        $this->id = $id;
     }
 
     /**
