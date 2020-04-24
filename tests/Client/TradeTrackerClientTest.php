@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class TradeTrackerClientTest
- * @package Hypeit\TradeTracker\Test\Client
+ * @package CLSystems\TradeTracker\Test\Client
  */
 class TradeTrackerClientTest extends TestCase
 {

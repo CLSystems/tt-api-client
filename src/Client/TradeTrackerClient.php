@@ -6,6 +6,8 @@ use CLSystems\TradeTracker\Exception\AuthenticationException;
 use CLSystems\TradeTracker\Filter;
 use CLSystems\TradeTracker\Mapper;
 use CLSystems\TradeTracker\Model;
+use SoapClient;
+use SoapFault;
 
 /**
  * Class TradeTrackerClient
@@ -14,7 +16,7 @@ use CLSystems\TradeTracker\Model;
 class TradeTrackerClient
 {
     /**
-     * @var \SoapClient
+     * @var SoapClient
      */
     private $client;
 
@@ -25,22 +27,22 @@ class TradeTrackerClient
      * @param Model\Authenticate $authenticate The model used to authenticate.
      * @param array|null         $options      The options used for the client.
      *
-     * @throws AuthenticationException
-     */
-    public function __construct(string $wsdl, Model\Authenticate $authenticate, array $options = null)
+     * @throws AuthenticationException|SoapFault
+	 */
+    public function __construct(string $wsdl, Model\Authenticate $authenticate, ?array $options)
     {
         if (null === $options) {
             $options = array('compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP);
         }
 
-        $this->client = new \SoapClient($wsdl, $options);
+        $this->client = new SoapClient($wsdl, $options);
         $this->connect($authenticate);
     }
 
     /**
      * Returns the soap client used to make api calls.
      *
-     * @return \SoapClient
+     * @return SoapClient
      */
     public function getClient()
     {
@@ -364,9 +366,9 @@ class TradeTrackerClient
     }
 
     /**
-     * @param int $affiliateSiteId
-     * @param string $outputType Possible values: html, javascript, iframe, popup, popunder, rss
-     * @param Filter\MaterialItemFilter|null $filter
+     * @param int                            $affiliateSiteId The affiliate site.
+     * @param string                         $outputType      Possible values: html, javascript, iframe, popup, popunder, rss
+     * @param Filter\MaterialItemFilter|null $filter          To filter the results.
      * @return array
      */
     public function getMaterialItems(int $affiliateSiteId, $outputType, Filter\MaterialItemFilter $filter = null)

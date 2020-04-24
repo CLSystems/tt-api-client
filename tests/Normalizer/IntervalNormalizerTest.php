@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Class IntervalNormalizerTest
- * @package Hypeit\TradeTracker\Test\Normalizer
+ * @package CLSystems\TradeTracker\Test\Normalizer
  */
 class IntervalNormalizerTest extends TestCase
 {
