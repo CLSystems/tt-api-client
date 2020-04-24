@@ -2,15 +2,15 @@
 
 A TradeTracker API client to communicate with the webservice and map results to real model objects.
 
-[![Build Status](https://travis-ci.org/hypeit/tradetracker-api-client.svg?branch=master)](https://travis-ci.org/hypeit/tradetracker-api-client)
-[![Total Downloads](https://poser.pugx.org/hypeit/tradetracker-api-client/downloads.svg)](https://packagist.org/packages/hypeit/tradetracker-api-client)
-[![Latest Stable Version](https://poser.pugx.org/hypeit/tradetracker-api-client/v/stable.svg)](https://packagist.org/packages/hypeit/tradetracker-api-client)
+[![Build Status](https://travis-ci.org/clsystems/tt-api-client.svg?branch=master)](https://travis-ci.org/clsystems/tt-api-client)
+[![Total Downloads](https://poser.pugx.org/clsystems/tt-api-client/downloads.svg)](https://packagist.org/packages/clsystems/tt-api-client)
+[![Latest Stable Version](https://poser.pugx.org/clsystems/tt-api-client/v/stable.svg)](https://packagist.org/packages/clsystems/tt-api-client)
 
 ## Installation
 
 You can install the package via composer:
 ```bash
-$ composer require hypeit/tradetracker-api-client
+$ composer require clsystems/tt-api-client
 ```
 
 You must configure authentication in order to use the client.
@@ -42,6 +42,7 @@ $affiliateSites = $client->getAffiliateSites();
 Common methods are:
 - getAffiliateSites
 - getCampaigns
+- getMaterialItems
 - getClickTransactions
 - getConversionTransactions
 - getTransactions
